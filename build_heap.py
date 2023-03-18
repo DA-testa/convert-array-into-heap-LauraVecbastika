@@ -22,7 +22,7 @@ def min_heapify(data, n, i, swaps):
     if rigthChild <len(data) and data[rigthChild]<data[smallest]:
         smallest=rigthChild
     if smallest != i:
-        data[n], data[smallest]= data[smallest], data[i]
+        data[i], data[smallest]= data[smallest], data[i]
         swaps.appen(i, smallest)
         min_heapify(data, n, i, swaps)
 
