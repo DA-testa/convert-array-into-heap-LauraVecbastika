@@ -49,7 +49,7 @@ def main():
      data = list(map(int, input().split()))
     if text.startswith("F"):
         file_name = input()
-        testFile = open("./test/"+file_name, 'r')
+        testFile = open("./tests/"+file_name, 'r')
         n = int(testFile.readline())
         dataLasa = testFile.readline()
         data =list(map(int, dataLasa.split()))
