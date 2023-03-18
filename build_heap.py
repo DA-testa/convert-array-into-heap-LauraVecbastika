@@ -11,27 +11,20 @@ def build_heap(data):
     #try to find smallest and then swap them places
 def min_heapify(data, n, i, swaps):
     i=smallest
-    def parent(i):
-        return (i-1)/2
+    leftChild= 2*i+1
+    rigthChild=2*i+2
+       
 
-    def left(i):
-        return 2*i+1
-    
-    def rigth(i):
-        return 2*i+2
-
-    leftChild=left(n)
-    rigthChild=right(n)
-    if leftChild< len(data) and data[leftChild]< data[n]:
+    if leftChild< len(data) and data[leftChild]< data[smallest]:
         smallest= leftChild
     elif
         smallest= n
     if rigthChild <len(data) and data[rigthChild]<data[smallest]:
         smallest=rigthChild
-    if smallest != n:
-        data[n], data[smallest]= data[smallest], data[n]
-        swaps.appen(n, smallest)
-    
+    if smallest != i:
+        data[n], data[smallest]= data[smallest], data[i]
+        swaps.appen(i smallest)
+        min_heapify(data, n, i, swaps):
 
 
 
