@@ -10,9 +10,9 @@ def build_heap(data):
     return swaps
     #try to find smallest and then swap them places
 def min_heapify(data, i, n, swaps):
-    print("i1=", i)
+    #print("i1=", i)
     smallest=i
-    print("smallest1=", smallest)
+    #print("smallest1=", smallest)
     leftChild= 2*i+1
     rigthChild=2*i+2
        
@@ -23,8 +23,8 @@ def min_heapify(data, i, n, swaps):
     if rigthChild < n and data[rigthChild]<data[smallest]:
         smallest=rigthChild
     if smallest != i:
-        print("i=", i)
-        print("smallest=", smallest)
+       # print("i=", i)
+        #print("smallest=", smallest)
         data[i], data[smallest]= data[smallest], data[i]
         swaps.append((i, smallest))
         min_heapify(data, smallest, n, swaps)
@@ -46,7 +46,7 @@ def main():
      data = list(map(int, input().split()))
     if text.startswith("F"):
         file_name = input()
-        file_name = open("./test/"+file_name)
+        file_name = open("./test/"+file_name, 'r')
         n = int(file_name.readline())
         dataLasa = file_name.readline()
         data =list(map(int, dataLasa.split()))
