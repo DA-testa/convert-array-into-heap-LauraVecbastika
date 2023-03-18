@@ -1,30 +1,37 @@
 # python3
-def min_heapify(data, size):
-    n=data.len()
+def build_heap(data):
+    swaps = []
+    # TODO: Creat heap and heap sort
+    # try to achieve  O(n) and not O(n2)
+    n= int((len(data)//2)-1):
+    for i in range (n, -1, -1)
+        min_heapify(data, n, i, swaps)
+
+    return swaps
+    
+def min_heapify(data, size, i):
+    i=smallest
+    def parent(i):
+        return (i-1)/2
+
+    def left(i):
+        return 2*i+1
+    
+    def rigth(i):
+        return 2*i+2
+
     leftChild=left(n)
     rigthChild=right(n)
     if leftChild< len(data) and data[leftChild]< data[n]:
         smallest= leftChild
-    else:
+    elif
         smallest= n
     if rigthChild <len(data) and data[rigthChild]<data[smallest]:
         smallest=rigthChild
     if smallest != n:
         data[n], data[smallest]= data[smallest], data[n]
-    def left(n):
-        return 2*n+1
     
-    def rigth(n):
-        return 2*n+2
-def build_heap(data):
-    swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-    k= int((len(data)//2)-1):
-    for i in range (k, -1, -1)
-        min_heapify(data, n)
 
-    return swaps
 
 
 def main():
