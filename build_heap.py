@@ -1,13 +1,38 @@
 # python3
-
-
 def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-
+    #n būs garums, cik daudz skaitļi, tik ievadīti
+    n = len(data)
+    for i in range (n//2, -1, -1):
+        min_heapify(data, i, n, swaps)
 
     return swaps
+    #try to find smallest and then swap them places
+def min_heapify(data, i, n, swaps):
+    #print("i1=", i)
+    smallest=i
+    #print("smallest1=", smallest)
+    parents=i/2
+    leftChild= 2*i+1
+    rigthChild=2*i+2
+       
+    #meklēju mazāko vērtību
+    if leftChild< n and data[leftChild]< data[smallest]:
+        smallest= leftChild
+    
+    if rigthChild < n and data[rigthChild]<data[smallest]:
+        smallest=rigthChild
+    if smallest != i:
+       # print("i=", i)
+        #print("smallest=", smallest)
+        #mainu vietām vērtības
+        data[i], data[smallest]= data[smallest], data[i]
+        swaps.append((i, smallest))
+        #padodu atkārtoti, tādējādi izveidojas "cikls", tikai šoreiz i vietā padodu smallest, jo pirms tam i==smallest
+        min_heapify(data, smallest, n, swaps)
+
 
 
 def main():
@@ -15,12 +40,22 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
+    text=input()
+    text=text.upper()
 
     # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
+    
+    if text.startswith("I"):
+     n = int(input())
+     data = list(map(int, input().split()))
+    if text.startswith("F"):
+        file_name = input()
+        testFile = open("./tests/"+file_name, 'r')
+        n = int(testFile.readline())
+        dataLasa = testFile.readline()
+        data =list(map(int, dataLasa.split()))
 
+    #print("n = ",n," data = ", data)
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
@@ -34,6 +69,7 @@ def main():
 
     # output all swaps
     print(len(swaps))
+    assert(len(swaps)) <= 4*n
     for i, j in swaps:
         print(i, j)
 
