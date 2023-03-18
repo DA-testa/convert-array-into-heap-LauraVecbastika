@@ -46,7 +46,7 @@ def main():
         file_name = open('./test/'+file_name)
         n = int(file_name.readline())
         dataLasa = file_name.readline()
-        data =list(map(int, dataLasa.split()))))
+        data =list(map(int, dataLasa.split()))
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
