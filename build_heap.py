@@ -5,11 +5,11 @@ def build_heap(data):
     # try to achieve  O(n) and not O(n2)
     n = len(data)
     for i in range (n//2, -1, -1):
-        min_heapify(data, n, i, swaps)
+        min_heapify(data, i, n, swaps)
 
     return swaps
     #try to find smallest and then swap them places
-def min_heapify(data, n, i, swaps):
+def min_heapify(data, i, n, swaps):
     smallest=i
     leftChild= 2*i+1
     rigthChild=2*i+2
@@ -24,7 +24,7 @@ def min_heapify(data, n, i, swaps):
     if smallest != i:
         data[i], data[smallest]= data[smallest], data[i]
         swaps.appen(i, smallest)
-        min_heapify(data, n, i, swaps)
+        min_heapify(data, i, n, swaps)
 
 
 
