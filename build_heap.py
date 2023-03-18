@@ -14,6 +14,7 @@ def min_heapify(data, i, n, swaps):
     #print("i1=", i)
     smallest=i
     #print("smallest1=", smallest)
+    parents=i/2
     leftChild= 2*i+1
     rigthChild=2*i+2
        
@@ -54,7 +55,7 @@ def main():
         dataLasa = testFile.readline()
         data =list(map(int, dataLasa.split()))
 
-    print("n = ",n," data = ", data)
+    #print("n = ",n," data = ", data)
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
