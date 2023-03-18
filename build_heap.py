@@ -17,7 +17,7 @@ def min_heapify(data, n, i, swaps):
 
     if leftChild< len(data) and data[leftChild]< data[smallest]:
         smallest= leftChild
-    elif
+    elif:
         smallest= n
     if rigthChild <len(data) and data[rigthChild]<data[smallest]:
         smallest=rigthChild
