@@ -8,8 +8,8 @@ def build_heap(data):
         min_heapify(data, n, i, swaps)
 
     return swaps
-    
-def min_heapify(data, size, i):
+    #try to find smallest and then swap them places
+def min_heapify(data, n, i, swaps):
     i=smallest
     def parent(i):
         return (i-1)/2
@@ -30,6 +30,7 @@ def min_heapify(data, size, i):
         smallest=rigthChild
     if smallest != n:
         data[n], data[smallest]= data[smallest], data[n]
+        swaps.appen(n, smallest)
     
 
 
@@ -67,6 +68,7 @@ def main():
 
     # output all swaps
     print(len(swaps))
+    assert(len(swaps)) <= 4*n
     for i, j in swaps:
         print(i, j)
 
