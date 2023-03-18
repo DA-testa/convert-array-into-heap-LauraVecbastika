@@ -3,7 +3,7 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    n= int((len(data)//2)-1):
+    n = int((len(data)/2)-1):
     for i in range (n, -1, -1)
         min_heapify(data, n, i, swaps)
 
