@@ -3,6 +3,7 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
+    #n būs garums, cik daudz skaitļi, tik ievadīti
     n = len(data)
     for i in range (n//2, -1, -1):
         min_heapify(data, i, n, swaps)
@@ -16,7 +17,7 @@ def min_heapify(data, i, n, swaps):
     leftChild= 2*i+1
     rigthChild=2*i+2
        
-
+    #meklēju mazāko vērtību
     if leftChild< n and data[leftChild]< data[smallest]:
         smallest= leftChild
     
@@ -25,8 +26,10 @@ def min_heapify(data, i, n, swaps):
     if smallest != i:
        # print("i=", i)
         #print("smallest=", smallest)
+        #mainu vietām vērtības
         data[i], data[smallest]= data[smallest], data[i]
         swaps.append((i, smallest))
+        #padodu atkārtoti, tādējādi izveidojas "cikls", tikai šoreiz i vietā padodu smallest, jo pirms tam i==smallest
         min_heapify(data, smallest, n, swaps)
 
 
