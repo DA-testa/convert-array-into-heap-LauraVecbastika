@@ -40,7 +40,7 @@ def main():
     
     if text.startswith("I"):
      n = int(input())
-        data = list(map(int, input().split()))
+     data = list(map(int, input().split()))
     if text.startswith("F"):
         file_name = input()
         file_name = open('./test/'+file_name)
