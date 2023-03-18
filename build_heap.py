@@ -49,9 +49,9 @@ def main():
      data = list(map(int, input().split()))
     if text.startswith("F"):
         file_name = input()
-        file_name = open("./test/"+file_name, 'r')
-        n = int(file_name.readline())
-        dataLasa = file_name.readline()
+        testFile = open("./test/"+file_name, 'r')
+        n = int(testFile.readline())
+        dataLasa = testFile.readline()
         data =list(map(int, dataLasa.split()))
 
     print("n = ",n," data = ", data)
