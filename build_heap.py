@@ -10,7 +10,7 @@ def build_heap(data):
     return swaps
     #try to find smallest and then swap them places
 def min_heapify(data, n, i, swaps):
-    i=smallest
+    smallest=i
     leftChild= 2*i+1
     rigthChild=2*i+2
        
