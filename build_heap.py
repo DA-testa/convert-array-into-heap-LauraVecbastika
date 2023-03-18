@@ -24,7 +24,7 @@ def min_heapify(data, n, i, swaps):
     if smallest != i:
         data[n], data[smallest]= data[smallest], data[i]
         swaps.appen(i, smallest)
-        min_heapify(data, n, i, swaps):
+        min_heapify(data, n, i, swaps)
 
 
 
