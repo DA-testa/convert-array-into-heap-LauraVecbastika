@@ -43,7 +43,7 @@ def main():
      data = list(map(int, input().split()))
     if text.startswith("F"):
         file_name = input()
-        file_name = open('./test/'+file_name)
+        file_name = open("./test/"+file_name)
         n = int(file_name.readline())
         dataLasa = file_name.readline()
         data =list(map(int, dataLasa.split()))
